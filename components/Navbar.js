@@ -5,7 +5,10 @@ import { AiOutlineShoppingCart,AiFillCloseCircle,AiFillPlusSquare ,AiFillMinusSq
 import { RiDeleteBin6Line} from 'react-icons/ri';
 import { BsFillBagHeartFill} from 'react-icons/bs';
 
-const Navbar = () => {
+const Navbar = ({cart,addToCart,removeFromCart,subtotal,clearCart}) => {
+
+
+
  const toggleCart= ()=>{
      if(ref.current.classList.contains('translate-x-full')){
       ref.current.classList.remove('translate-x-full')
@@ -37,17 +40,20 @@ const Navbar = () => {
         <h2 className='font-bold text-xl text-center'>Shopping Cart</h2>
         <span onClick={toggleCart} className="absolute top-5 right-5 cursor-pointer text-2xl text-orange-600"><AiFillCloseCircle/></span>
             <ol className='font-semibold' >
-              <li>
+              {Object.keys(cart).length===0 && <div className='mt-5 mb-5 '>Your cart is empty !</div>}
+           {Object.keys(cart).map((k)=>{ return <li key={k}>
                 <div className="item flex my-5">
-                   <div className='w-2/3'>1. T-shirt Wear the code </div>
-                   <div className='w-1/3 flex  items-center justify-center '><AiFillPlusSquare className='mx-1 text-5xl text-orange-500  cursor-pointer ' />1<AiFillMinusSquare className='mx-1 text-5xl text-orange-500 cursor-pointer' /> <RiDeleteBin6Line className='text-5xl text-red-900 cursor-pointer' /> </div>
+                  {console.log(cart[k].qty)}
+                   <div className='w-2/3'>{cart[k].name}</div>
+                   <div className='w-1/3 flex  items-center justify-center '><AiFillPlusSquare onClick={()=>{addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}}   className='mx-1 text-5xl text-orange-500  cursor-pointer ' />{cart[k].qty}<AiFillMinusSquare onClick={()=>{removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className='mx-1 text-5xl text-orange-500 cursor-pointer' /> <RiDeleteBin6Line  className='text-5xl text-red-900 cursor-pointer' /> </div>
                 </div>
-              </li>
+              </li>}) 
+      }
              
             </ol>
             <div className="flex">
             <button className="bg-orange-500 mr-3 hover:bg-orange-700 text-white font-bold py-2 px-2 left-0 rounded pr-7">Checkout <BsFillBagHeartFill className='inline m-1 absolute '/> </button>
-            <button className="bg-red-500 mr-3 hover:bg-red-800 text-white font-bold py-2 px-2 left-0 rounded">Clear Cart </button>
+            <button onClick={clearCart}  className="bg-red-500 mr-3 hover:bg-red-800 text-white font-bold py-2 px-2 left-0 rounded">Clear Cart </button>
             </div>
       </div>
     </div>

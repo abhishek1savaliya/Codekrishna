@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { BsCheckSquare } from 'react-icons/bs';
 
 
-const Post = () => {
+const Post = ({addToCart}) => {
   const router = useRouter()
   const {slug} = router.query
   const [Pin, setPin] = useState()
@@ -113,7 +113,7 @@ const Post = () => {
 </div>
 
         <div className="flex  ">
-          <button className="flex  text-white  bg-orange-500 border-0 py-2 px-4  focus:outline-none hover:bg-orange-600 rounded">Add to Cart</button> 
+          <button onClick={()=>{addToCart(slug,1,499,'Jay Shree Krishna','XL',"Red")}} className="flex text-white  bg-orange-500 border-0 py-2 px-4  focus:outline-none hover:bg-orange-600 rounded">Add to Cart</button> 
           <button className="flex ml-8 text-white   bg-orange-500 border-0 py-2 px-6 focus:outline-none hover:bg-orange-600 rounded">Buy Now</button> 
           <button className="rounded-full w-10 h-10 bg-gray-200 p-0 border-0 inline-flex items-center justify-center text-gray-500 ml-4">
             <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
