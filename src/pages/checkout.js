@@ -87,7 +87,7 @@ const Checkout = ({cart,clearCart,addToCart,removeFromCart,subtotal}) => {
                    <div className='w-1/3 flex  items-center justify-center '><AiFillPlusSquare onClick={()=>{addToCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}}   className='mx-1 text-5xl text-orange-500  cursor-pointer ' />{cart[k].qty}<AiFillMinusSquare onClick={()=>{removeFromCart(k,1,cart[k].price,cart[k].name,cart[k].size,cart[k].variant)}} className='mx-1 text-5xl text-orange-500 cursor-pointer' /> <RiDeleteBin6Line  className='text-5xl text-red-900 cursor-pointer' /> </div>  
                 </div>
               </li>}) 
-      }         <span className='font-mono'>Subtotal : {subtotal} </span>
+      }         <span className='font-mono'>Subtotal : ₹{subtotal} </span>
             </ol>
             
     <div className="mt-2">

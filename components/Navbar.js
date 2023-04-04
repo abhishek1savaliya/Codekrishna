@@ -51,7 +51,7 @@ const Navbar = ({cart,addToCart,removeFromCart,subtotal,clearCart}) => {
       }
             
             </ol>
-            <span className='mb-2 font-mono font-semibold'>Subtotal : {subtotal} </span>
+            <span className='mb-2 font-mono font-semibold'>Subtotal : ₹{subtotal} </span>
             <div className="flex">
            <Link href={"/checkout"}> <button className="bg-orange-500 mr-3 mt-2 hover:bg-orange-700 text-white font-bold py-2 px-2 left-0 rounded pr-7">Checkout <BsFillBagHeartFill className='inline m-1 absolute '/> </button></Link>
             <button onClick={clearCart}  className="bg-red-500 mr-3 mt-2 hover:bg-red-800 text-white font-bold py-2 px-2 left-0 rounded">Clear Cart </button>
