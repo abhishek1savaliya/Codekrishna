@@ -11,7 +11,8 @@ export default function App({ Component, pageProps }) {
   
     try{
       if(localStorage.getItem("cart")){
-      setCart(JSON.parse(localStorage.getItem("cart"))) 
+      setCart(JSON.parse(localStorage.getItem("cart")));
+       saveCart(JSON.parse(localStorage.getItem("cart")))
       }
     }
     catch(e){
@@ -28,7 +29,7 @@ export default function App({ Component, pageProps }) {
     let subt = 0;
     let keys = Object.keys(mycart)
     for(let i=0;i<keys.length;i++){
-      subt +=  mycart[keys[i]].price + mycart[keys[i]].qty;
+      subt +=  mycart[keys[i]].price * mycart[keys[i]].qty;
     }
     setSubtotal(subt)
 
@@ -65,7 +66,7 @@ export default function App({ Component, pageProps }) {
  }
   return (
     <>
-      <Navbar cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />  
+      <Navbar key={subtotal} cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} />  
       <Component  cart={cart} addToCart={addToCart} removeFromCart={removeFromCart} clearCart={clearCart} subtotal={subtotal} {...pageProps} /> 
       <Footer />
     </>

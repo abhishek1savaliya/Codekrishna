@@ -4,26 +4,28 @@ import Link from 'next/link'
 const Hoodies = () => {
   return (
     <div>
-      <section className="text-gray-600 body-font">
-<div className="container px-5 py-24 mx-auto">
-<div className="flex flex-wrap -m-4">
-<Link href={"./product/code wear"}>
-<div className="lg:w-1/4 md:w-1/2 p-4 w-full cursor-pointer shadow-lg m-2">
+    <div class="bg-white">
+ <div class="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+   <h2 class="sr-only">Products</h2>
 
-<img alt="ecommerce" width={1500} height={1500} className="object-cover object-center w-full h-full block" src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSiFIcbahBeFOJrvLnIK_sSZwaUiPHazzYjyytHbH6qdwBjmtis6nlx35IOBBgmRPx5SYuBCTWMK2wfFzdN9Pjlciy7ulKlx0ueXdaV7C_U" />
-<div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirt</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">Wear the Code</h2>
-          <p className="mt-1">₹499.00</p>
-          <p className="mt-1">S,M,L,XL,XXL</p>
-        </div>
+   <div class="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+     <Link href={"./product/code wear"} class="group">
+       <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7  ">
+         <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/61ScGfBD4mL._UL1500_.jpg" alt="Mugs" class="h-full w-full object-cover object-center group-hover:opacity-75" />
+       </div>
+       <div class="mt-4">
+         <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">T-Shirt</h3>
+         <h2 class="text-gray-900 title-font text-lg font-medium">Wear the Code</h2>
+         <p class="mt-1 ">₹499.00</p>
+         <p class="mt-1">S,M,L,XL,XXL</p>
+       </div>
+     </Link>
+   </div>
 
+   
+ </div>
 </div>
-</Link>
-</div>
-</div>
-</section>
-    </div>
+   </div>
   )
 }
 
