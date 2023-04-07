@@ -12,12 +12,12 @@ const handler = async (req, res) => {
                 img:req.body[i].img ,
                 category:req.body[i].category ,
                 size:req.body[i].size,
-                color:req.body[i].size,
+                color:req.body[i].color,
                 price: req.body[i].price,
                 availableQty:req.body[i].availableQty,
             })
-          let x =  await p.save();
-           console.log(x);
+           await p.save();
+        
         }
         res.status(200).json({success:"success"})
     }
