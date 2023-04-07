@@ -14,8 +14,8 @@ export default function Home() {
      
       </Head>
 
-   <div className='page'>
-    <Image src="/home.png" height={30} width={10000} alt="This is Home page" />
+   <div className='page '>
+    <Image src="/home.jpg" className='w-full h-96' height={2} width={1000} alt="This is Home page" />
    </div>
    <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
